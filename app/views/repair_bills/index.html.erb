@@ -1,7 +1,7 @@
 <h1>Repair Bills</h1>
 
 <ul><% @repair_bills.each do |repair_bill| %>
-    <li><%= repair_bill.brand %> - <%= repair_bill.model %></li>
+    <li><%= repair_bill.year %> <%= repair_bill.brand %> <%= repair_bill.model %></li>
     <% end %>
 
 </ul>
