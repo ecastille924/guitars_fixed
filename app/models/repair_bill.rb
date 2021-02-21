@@ -1,0 +1,2 @@
+class RepairBill < ApplicationRecord
+end
