@@ -1,4 +1,6 @@
 class RepairBillsController < ApplicationController
+layout false, :except => :show
+
 
     def index 
         @repair_bills = RepairBill.all
