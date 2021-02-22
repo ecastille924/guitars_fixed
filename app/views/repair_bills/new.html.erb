@@ -12,5 +12,7 @@
     <%= f.check_box :acoustic %><br>
     <%= f.label :electric %>
     <%= f.check_box :electric %><br>
-    <%= f.submit %>
+    <%= f.label :reason_for_repair %>
+    <%= f.text_area :reason_for_repair %>
+    <%= f.submit name="Submit Repair Bill" %>
 <% end %>

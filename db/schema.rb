@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_21_174741) do
+ActiveRecord::Schema.define(version: 2021_02_22_230758) do
 
   create_table "repair_bills", force: :cascade do |t|
     t.string "brand"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2021_02_21_174741) do
     t.boolean "electric"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.text "reason_for_repair"
   end
 
 end
