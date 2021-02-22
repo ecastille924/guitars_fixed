@@ -33,7 +33,7 @@ layout false, :except => :show
     def create 
         @repair_bill = RepairBill.new(repair_bill_params) 
         if @repair_bill.save 
-            redirect_to repair_bill_path 
+            redirect_to repair_bill_path(@repair_bill) 
         else
             render :new
         end
