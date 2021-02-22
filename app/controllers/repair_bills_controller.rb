@@ -43,5 +43,5 @@ end
 private 
 
 def repair_bill_params 
-    params.require(:repair_bill).permit(:brand, :model, :year, :style, :acoustic, :electric)
+    params.require(:repair_bill).permit(:brand, :model, :year, :style, :acoustic, :electric, :reason_for_repair)
 end
