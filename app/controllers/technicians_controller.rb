@@ -14,9 +14,11 @@ class TechniciansController < ApplicationController
   end
 
   def show
+    @technician = Technician.find(params[:id])
   end
 
   def index
+    @technician = Technician.all 
   end
 end
 
