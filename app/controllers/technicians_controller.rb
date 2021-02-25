@@ -5,7 +5,12 @@ class TechniciansController < ApplicationController
   end
 
   def create
-    
+    @technician = Technician.new(technician_params)
+    if @technician.save 
+      redirect_to technicians_path(@technician)
+    else 
+      render :new 
+    end
   end
 
   def show
@@ -13,4 +18,10 @@ class TechniciansController < ApplicationController
 
   def index
   end
+end
+
+private 
+
+def technician_params 
+  params.require(:technician).permit(:name, :specialty)
 end
