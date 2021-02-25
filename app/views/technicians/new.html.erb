@@ -1,2 +1,6 @@
-<h1>Technicians#new</h1>
-<p>Find me in app/views/technicians/new.html.erb</p>
+<h1>Technicians</h1>
+<%= form_for(@technician) do |t| %>
+    <%= t.label :name %>
+    <%= t.text_field :name %>
+    <%= t.submit %>
+<% end %>
