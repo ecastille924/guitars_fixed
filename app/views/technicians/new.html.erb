@@ -1,6 +1,8 @@
 <h1>Technicians</h1>
 <%= form_for(@technician) do |t| %>
-    <%= t.label :name %>
-    <%= t.text_field :name %>
-    <%= t.submit %>
+    <%= t.label :name, "Technician:" %>
+    <%= t.text_field :name %><br><br>
+    <%= t.label :specialty, "Specialty:" %>
+    <%= t.text_area :specialty %><br><br>
+    <%= t.submit "Join the Team!" %>
 <% end %>
