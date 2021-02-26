@@ -1,6 +1,7 @@
 <h1>Repair Bills</h1>
 
 <%= flash[:message] %>
+<br>
 
 
 <ul><% @repair_bills.each do |repair_bill| %>
@@ -8,5 +9,7 @@
     <li><%= link_to(repair_bill.year_brand_model, repair_bill_path(repair_bill.id)) %></li>
     
     <% end %>
+    <br>
+    <%= button_to "New Repair Bill", new_repair_bill_path, method: 'get' %>
 
 </ul>
