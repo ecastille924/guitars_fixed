@@ -6,10 +6,6 @@ layout false, :except => :show
         @repair_bills = RepairBill.all
     end
 
-    def show
-        @repair_bill = RepairBill.find(params[:id])
-    end
-
     def new 
         #binding.pry
         @repair_bill = RepairBill.new
@@ -29,7 +25,11 @@ layout false, :except => :show
     def destroy 
         repair_bill = RepairBill.find(params[:id])
         repair_bill.destroy
-        redirect_to repair_bill_path
+        redirect_to '/repair_bills'
+    end
+
+    def show
+        @repair_bill = RepairBill.find(params[:id])
     end
 
     def create 
