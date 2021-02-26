@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :technicians, only: [:new, :create, :show, :index]
-  resources :repair_bills
+  resources :repair_bills, only: [:new, :create, :show, :index]
 
   get '/auth/google_oauth2/callback', to: 'sessions#omniauth'
   

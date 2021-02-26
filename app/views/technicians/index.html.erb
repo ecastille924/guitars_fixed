@@ -1,6 +1,7 @@
 <h1>All Technicians</h1>
 <ul>
-<%= @technicians.each do |tech| %>
-    <li><%= link_to(tech.name, technician_path(tech.id)) %> </li>
+<% @technicians.each do |technician| %>
+    <li><%= link_to(technician.name, technician_path(technician.id)) %> </li>
     <% end %>
 </ul>
+

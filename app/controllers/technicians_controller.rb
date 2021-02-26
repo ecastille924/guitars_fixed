@@ -18,7 +18,7 @@ class TechniciansController < ApplicationController
   end
 
   def index
-    @technician = Technician.all 
+    @technicians = Technician.all 
   end
 end
 
