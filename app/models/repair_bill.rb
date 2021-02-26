@@ -1,5 +1,6 @@
 class RepairBill < ApplicationRecord
     belongs_to :technician, optional: true
+    belongs_to :user
     validates :brand, :model, :style, :reason_for_repair, presence:true
     #accepts_nested_attributes_for :technician
 
