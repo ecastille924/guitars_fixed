@@ -11,7 +11,9 @@ layout false, :except => :show
     end
 
     def new 
+        #binding.pry
         @repair_bill = RepairBill.new
+        @repair_bill.build_technician
     end
 
     def edit 
@@ -43,5 +45,5 @@ end
 private 
 
 def repair_bill_params 
-    params.require(:repair_bill).permit(:brand, :model, :year, :style, :acoustic, :electric, :reason_for_repair)
+    params.require(:repair_bill).permit(:brand, :model, :year, :style, :acoustic, :electric, :reason_for_repair, technician_attributes: [:name])
 end
