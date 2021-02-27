@@ -15,7 +15,11 @@
   <body>
     <%= yield %>
     <br>
-    <%= button_to("View All/ Create New Repair Bill", repair_bills_path, method: :get) %><br>
+    <%= button_to("All Repair Bills", repair_bills_path, method: :get) %><br>
+    <%= link_to ("Log Out"), '/logout', method: 'delete' %>
+    <% if flash[:message] %>
+      <div class="field_with_errors"><%= flash[:message] %>
+    <% end %>
   </body>
 
  
