@@ -13,8 +13,12 @@
     <%= f.label :electric %>
     <%= f.check_box :electric %><br>
     <br>
-    <%= f.label :reason_for_repair %><br>
+    <%= f.label :reason_for_repair, "Reason for repair:" %><br>
     <%= f.text_area :reason_for_repair %><br>
+    <br>
+    <%= f.label :repair_completed, "Repair Complete?" %>
+    <%= f.check_box :repair_completed %>
+    <br>
     <br>
     <%= f.submit name="Submit Repair Bill" %>
 <% end %>
