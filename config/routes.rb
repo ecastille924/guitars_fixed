@@ -4,10 +4,12 @@ Rails.application.routes.draw do
   resources :technicians, only: [:new, :create, :show, :index]
   resources :repair_bills
   resources :users 
-
+  
+  #resources :sessions
   get '/auth/google_oauth2/callback', to: 'sessions#omniauth'
 
-#get '/signup', to: 'users#new'
+  get '/login', to: 'sessions#new', as: "login"
+
 #post '/signup', to: 'users#create'
 #get '/user/:id', to: 'users#show', as: 'user'
   
