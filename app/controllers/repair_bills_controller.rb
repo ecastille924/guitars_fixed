@@ -1,5 +1,5 @@
 class RepairBillsController < ApplicationController
-layout false, :except => :show
+#layout false, :except => :show
 
 
     def index 
