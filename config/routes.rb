@@ -8,9 +8,9 @@ Rails.application.routes.draw do
   #resources :sessions
   get '/auth/google_oauth2/callback', to: 'sessions#omniauth'
 
-  get '/login', to: 'sessions#new', as: "login"
+  get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
-  delete 'logout', to: 'sessions#destroy'
+  delete '/logout', to: 'sessions#destroy'
 
 #post '/signup', to: 'users#create'
 #get '/user/:id', to: 'users#show', as: 'user'
