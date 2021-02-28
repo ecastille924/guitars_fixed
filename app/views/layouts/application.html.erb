@@ -16,10 +16,7 @@
   <header class="navbar  navbar-inverse">
     <div class="navbar-class">
       <div class="container">
-
-    <ul class="nav navbar-nav">
     <br>
-    
     <% if !current_user.present? %>
       <%= button_to ("Log In"), '/login', method: :get %>
     <% end %>
@@ -40,8 +37,10 @@
       <%= button_to("My Repair Bills", repair_bills_path, method: :get) %>
     <% end %>
     
-    <%= button_to("View All Technicians", '/technicians', method: :get) %><br>
-    
+    <% if current_user.present? %>
+      <%= button_to("View All Technicians", '/technicians', method: :get) %><br>
+    <% end %>
+
     <% if current_user.present? %>
       <%= button_to "Create New Repair Bill", new_repair_bill_path, method: 'get' %>
     <% end %>
@@ -49,15 +48,12 @@
     <% if flash[:message] %>
       <div class="field_with_errors"><%= flash[:message] %>
     <% end %>
-    </ul>
-
 
     </div>
     </div>
   </header>
 
     <%= yield %>
-    <br>
     <hr>
     
    
