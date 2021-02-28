@@ -1,4 +1,15 @@
 <h1>Sign Up</h1>
+
+<% if @user.errors.any? %>
+    <div id="error_explanation">
+    <p><%= pluralize(@user.errors.count, "error")%> prohibited account creation:</p>
+    <ul>
+        <% @user.errors.full_messages.each do |error| %>
+            <li><%= error %></li>
+        <% end %> 
+    </ul>
+<% end %>
+
 <%= form_for(@user) do |t| %>
     <%= t.label :username, "Username:" %>
     <%= t.text_field :username %><br><br>
