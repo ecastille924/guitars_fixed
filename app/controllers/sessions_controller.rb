@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
         u = User.find_by_email(params[:email])
         if u && u.authenticate(params[:password])
             session[:user_id]= u.id
-            redirect_to user_path(u)
+            redirect_to '/'
         else
             flash[:message] = "Credentials invalid."
             redirect_to '/login'
@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
         user = User.create_from_omniauth(auth)
 
         if user.valid?
-            session[:user.id] = user.id 
+            session[:user_id] = user.id 
            redirect_to new_repair_bill_path
         else
             flash[:message] = user.errors.full_messages.join("")
