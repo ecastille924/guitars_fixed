@@ -21,9 +21,9 @@
     <br>
     <%= button_to ("Log In"), '/login', method: :get %>
     <%= button_to ("Log Out"), '/logout', method: 'delete' %>
-     <%= button_to("Log In With Google", '/auth/google_oauth2') %>
+    <%= button_to("Log In With Google", '/auth/google_oauth2') %>
     <%= button_to("Create Account", new_user_path, method: :get) %><br>
-    <%= button_to("View All Repair Bills", repair_bills_path, method: :get) %>
+    <%= button_to("My Repair Bills", repair_bills_path, method: :get) %>
     <%= button_to("View All Technicians", '/technicians', method: :get) %><br>
     <%= button_to "Create New Repair Bill", new_repair_bill_path, method: 'get' %>
      

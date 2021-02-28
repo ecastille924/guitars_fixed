@@ -3,7 +3,7 @@ class RepairBillsController < ApplicationController
 
 
     def index 
-        @repair_bills = RepairBill.all
+        @repair_bills = current_user.repair_bills.all
     end
 
     def new 
