@@ -55,5 +55,5 @@ end
 private 
 
 def repair_bill_params 
-    params.require(:repair_bill).permit(:user_id, :brand, :model, :year, :style, :acoustic, :electric, :reason_for_repair, :repair_completed, technician_attributes: [:name])
+    params.require(:repair_bill).permit(:user_id, :brand, :model, :year, :style, :acoustic, :electric, :reason_for_repair, :repair_completed, :technician_id, technician_attributes: [:name])
 end

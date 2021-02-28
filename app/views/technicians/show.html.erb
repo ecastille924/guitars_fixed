@@ -1,1 +1,8 @@
-<h1>@technician.name</h1>
+<h1><%= @technician.name %></h1>
+
+<ul>
+<% @technician.repair_bills.each do |r| %>
+    <li><%= r.year_brand_model %></li>
+    <small><BLOCKQUOTE><%= r.reason_for_repair %></BLOCKQUOTE></small>
+<% end %>
+</ul>

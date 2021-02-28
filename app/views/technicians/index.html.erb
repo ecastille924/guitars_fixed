@@ -2,7 +2,8 @@
 <ul>
 <% @technicians.each do |technician| %>
     <li><%= link_to(technician.name, technician_path(technician.id))%> </li>
-    <li><em><%= technician.specialty %></em></li>
+    <BLOCKQUOTE><em><%= technician.specialty %></em></BLOCKQUOTE>
+    <BLOCKQUOTE>Total Repairs: <%= technician.repair_bills.count %></BLOCKQUOTE>
     <% end %>
 </ul>
 
