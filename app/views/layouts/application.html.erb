@@ -45,11 +45,15 @@
       <%= button_to "Create New Repair Bill", new_repair_bill_path, method: 'get' %>
     <% end %>
 
+    <% if current_user.present? %>
+      <%= button_to("Top Performing Technician", '/technicians/top_tech', method: 'get') %>
+    <% end %>
+
     <% if flash[:message] %>
       <div class="field_with_errors"><%= flash[:message] %>
     <% end %>
 
-    <%= link_to("Top Performing Technician", '/technicians/top_tech') %>
+    
 
     </div>
     </div>
