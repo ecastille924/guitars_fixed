@@ -27,3 +27,7 @@ private
 def technician_params 
   params.require(:technician).permit(:name, :specialty)
 end
+
+def top_tech 
+  @technician = Technician.most_repairs
+end
