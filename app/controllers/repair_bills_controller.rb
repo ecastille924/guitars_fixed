@@ -14,6 +14,11 @@ class RepairBillsController < ApplicationController
 
     def edit 
         @repair_bill = RepairBill.find(params[:id])
+        if @repair_bill.user == current_user 
+            render :edit 
+        else 
+            redirect_to '/repair_bills'
+        end
     end
 
     def update 
@@ -33,7 +38,7 @@ class RepairBillsController < ApplicationController
     end
 
     def create 
-        @repair_bill = RepairBill.new(repair_bill_params) 
+        @repair_bill = RepairBill.new(repair_bill_params.merge(user_id: current_user.id)) 
         if @repair_bill.save 
             redirect_to repair_bill_path(@repair_bill) 
         else
@@ -42,8 +47,9 @@ class RepairBillsController < ApplicationController
     end
 end
 
+
 private 
 
 def repair_bill_params 
-    params.require(:repair_bill).permit(:brand, :model, :year, :style, :acoustic, :electric, :reason_for_repair, technician_attributes: [:name])
+    params.require(:repair_bill).permit(:user_id, :brand, :model, :year, :style, :acoustic, :electric, :reason_for_repair, :repair_completed, technician_attributes: [:name])
 end

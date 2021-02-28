@@ -11,6 +11,7 @@
 <% end %>
 
 <%= form_for(@repair_bill) do |f| %>
+    <%= f.hidden_field :user_id %>
     <%= f.label :brand %>
     <%= f.text_field :brand %><br>
     <%= f.label :model %>
