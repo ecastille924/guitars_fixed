@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :technicians, only: [:new, :create, :show, :index]
   resources :repair_bills
   resources :users 
+  post '/repair_bills/:id/edit', to: 'repair_bills#edit'
   
   #resources :sessions
   get '/auth/google_oauth2/callback', to: 'sessions#omniauth'

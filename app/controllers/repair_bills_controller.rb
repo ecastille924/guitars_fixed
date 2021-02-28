@@ -15,7 +15,7 @@ class RepairBillsController < ApplicationController
     def edit 
         @repair_bill = RepairBill.find(params[:id])
         if @repair_bill.user == current_user 
-            render :edit 
+            render :edit
         else 
             redirect_to '/repair_bills'
         end
@@ -29,8 +29,12 @@ class RepairBillsController < ApplicationController
 
     def destroy 
         repair_bill = RepairBill.find(params[:id])
-        repair_bill.destroy
-        redirect_to '/repair_bills'
+        if repair_bill.user == current_user
+            repair_bill.destroy
+            redirect_to '/repair_bills'
+        else
+           redirect_to '/repair_bills'
+        end
     end
 
     def show
