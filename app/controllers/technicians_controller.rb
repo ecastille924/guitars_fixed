@@ -3,7 +3,7 @@ class TechniciansController < ApplicationController
     @technician = Technician.new 
     
   end
-
+  
   def create
     @technician = Technician.new(technician_params)
     if @technician.save 
@@ -20,6 +20,11 @@ class TechniciansController < ApplicationController
   def index
     @technicians = Technician.all 
   end
+
+  def top_tech 
+    @technician = Technician.all.sort_by{|technician| technician.repair_bills.count}.last
+  end
+  
 end
 
 private 
@@ -28,6 +33,4 @@ def technician_params
   params.require(:technician).permit(:name, :specialty)
 end
 
-def top_tech 
-  @technician = Technician.most_repairs
-end
+
