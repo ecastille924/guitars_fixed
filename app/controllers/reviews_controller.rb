@@ -1,21 +1,18 @@
 class ReviewsController < ApplicationController
-    respond_to :html, :xml, :json
 
     def new 
-        @technician = Technician.find(params[:technician_id])
-        @review = @technician.reviews.build
-        respond_with(@review)
+        @review = Review.new
     end
 
     def create
-        @technician = Technician.find(params[:technician_id])
-        @review = @technician.reviews.build(params[:review]) 
-        if @review.save 
-            redirect_to '/technicians'
-        else 
-            render :new
+        @review = Review.new(review_params)
+    
+        if @review.save
+          redirect_to @review
+        else
+          render :new
         end
-    end
+      end
 end
 
 private 

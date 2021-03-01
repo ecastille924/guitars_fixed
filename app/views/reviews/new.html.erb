@@ -1,4 +1,7 @@
-<%= form_for(@review, :url=>new_technician_review_path(@technician)) do |f| %>
+<h1>New Review</h1>
+
+<%= form_for @review do |f| %>
     <%= f.label :content %>
     <%= f.text_area :content %>
+    <%= f.submit %>
 <% end %>
