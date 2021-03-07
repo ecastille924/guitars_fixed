@@ -1,7 +1,11 @@
 class ReviewsController < ApplicationController
 
   def index 
-    @reviews = Review.all
+    #if params[:technician_id]
+      #@reviews = Technician.find(params[:technician_id])
+   # else
+      @reviews = Review.all
+    #end
   end
 
   def show 
@@ -19,7 +23,7 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to @review
     else
-      render :new
+      render 'new'
     end
   end
 

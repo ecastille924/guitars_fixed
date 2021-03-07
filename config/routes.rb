@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   resources :technicians do
     resources :reviews, only: [:index, :new, :show]
   end
+
+  resources :reviews, only: [:index, :new, :show]
   
   root 'sessions#welcome'
   get '/technicians/top_tech', to: 'technicians#top_tech' 
