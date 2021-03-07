@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root 'sessions#welcome'
   get '/technicians/top_tech', to: 'technicians#top_tech' 
   resources :technicians do
-    resources :reviews
+    resources :reviews, only: [:index, :new, :show]
   end
   resources :repair_bills
   resources :users 
