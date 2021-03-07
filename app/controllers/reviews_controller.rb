@@ -1,11 +1,11 @@
 class ReviewsController < ApplicationController
 
   def index 
-    #if params[:technician_id]
-      #@reviews = Technician.find(params[:technician_id])
-   # else
+    if params[:technician_id]
+      @reviews = Technician.find(params[:technician_id])
+    else
       @reviews = Review.all
-    #end
+    end
   end
 
   def show 
@@ -13,6 +13,7 @@ class ReviewsController < ApplicationController
   end
   
   def new 
+      @technician = Technician.find(params[:technician_id])
       @review = Review.new
   end
 
@@ -33,5 +34,5 @@ end
 private 
 
 def review_params
-    params.require(:review).permit(:content, :technician_id)
+    params.require(:review).permit(:content, :technician_id, :user_id)
 end

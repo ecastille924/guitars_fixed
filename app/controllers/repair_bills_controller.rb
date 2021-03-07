@@ -4,11 +4,11 @@ class RepairBillsController < ApplicationController
 
     def index 
         @repair_bills = RepairBill.all
-       # if current_user
-           # @repair_bills = current_user.repair_bills.all
-       # else 
-           # @repair_bills = nil 
-        #end
+        if current_user
+            @repair_bills = current_user.repair_bills.all
+        else 
+            @repair_bills = nil 
+        end
     end
 
     def new 
