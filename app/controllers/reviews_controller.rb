@@ -1,5 +1,9 @@
 class ReviewsController < ApplicationController
 
+  def index 
+    @reviews = Review.all
+  end
+
   def show 
     @review = Review.find(params[:id])
   end
@@ -9,6 +13,7 @@ class ReviewsController < ApplicationController
   end
 
   def create
+    @technician = Technician.find(params[:technician_id])
     @review = Review.new(review_params)
     
     if @review.save

@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  root 'sessions#welcome'
-  get '/technicians/top_tech', to: 'technicians#top_tech' 
   resources :technicians do
     resources :reviews, only: [:index, :new, :show]
   end
+  
+  root 'sessions#welcome'
+  get '/technicians/top_tech', to: 'technicians#top_tech' 
+  
+  
+  
   resources :repair_bills
   resources :users 
   post '/repair_bills/:id/edit', to: 'repair_bills#edit'
