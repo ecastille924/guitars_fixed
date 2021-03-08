@@ -13,3 +13,4 @@ Reviews:
     <li> <small><i><%= r.content %></i></small> </li>
 <% end %>
 </ol>
+<%= link_to "Write Review", new_technician_review_path(@technician.id) %>
