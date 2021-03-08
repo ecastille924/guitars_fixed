@@ -6,3 +6,10 @@
     <small><BLOCKQUOTE><%= r.reason_for_repair %></BLOCKQUOTE></small>
 <% end %>
 </ul>
+<br>
+Reviews:
+<ol>
+<% @technician.reviews.each do |r| %>
+    <li> <small><i><%= r.content %></i></small> </li>
+<% end %>
+</ol>

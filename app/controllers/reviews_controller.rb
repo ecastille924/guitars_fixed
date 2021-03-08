@@ -10,6 +10,7 @@ class ReviewsController < ApplicationController
 
   def show 
     @review = Review.find(params[:id])
+    @technician = Technician.find(params[:id])
   end
   
   def new 
@@ -24,7 +25,7 @@ class ReviewsController < ApplicationController
     #@review = @technician.review.build(params[:review_params])
     
     if @review.save
-      redirect_to @review
+      redirect_to technicians_path
     else
       render 'new'
     end
