@@ -13,9 +13,6 @@ class TechniciansController < ApplicationController
     end
   end
 
-  def show
-    @technician = Technician.find(params[:id])
-  end
 
   def index
     @technicians = Technician.all 
@@ -23,6 +20,10 @@ class TechniciansController < ApplicationController
 
   def top_tech 
     @technician = Technician.all.sort_by{|technician| technician.repair_bills.count}.last
+  end
+
+  def show
+    @technician = Technician.find(params[:id])
   end
   
 end
