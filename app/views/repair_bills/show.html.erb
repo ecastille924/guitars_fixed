@@ -6,7 +6,6 @@
 <b>Acoustic:</b> <%= @repair_bill.acoustic %><br>
 <b>Electric:</b> <%= @repair_bill.electric %><br>
 <b>Reason for Repair:</b> <%= @repair_bill.reason_for_repair %><br>
-<b>Completed?</b> <%= @repair_bill.repair_completed %>
 <br>
 <br>
 <%= button_to "Edit_Repair_Bill", edit_repair_bill_path(@repair_bill.id) %> ~ or ~ <%= button_to "Delete Repair Bill", repair_bill_path(@repair_bill.id), method: 'delete' %>
