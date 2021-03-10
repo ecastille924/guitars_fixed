@@ -20,7 +20,7 @@ class ReviewsController < ApplicationController
   end
 
   def create
-   # @technician = Technician.find(params[:technician_id])
+    #@technician = Technician.find(params[:technician_id])
     @review = Review.new(review_params.merge(user_id: current_user.id))
     #@review = @technician.review.build(params[:review_params])
     

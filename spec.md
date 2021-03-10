@@ -27,7 +27,7 @@ Specs:
         - A User can sign up through Google
 - [x] Include nested resource show or index (URL e.g. users/2/recipes)
         - A User's created RepairBills are tracked and excusively dispalayed to that User. 
-- [/] Include nested resource "new" form (URL e.g. recipes/1/ingredients/new)
+- [x] Include nested resource "new" form (URL e.g. recipes/1/ingredients/new)
         - A technician has a nested resource of 'reviews.'
 - [x] Include form display of validation errors (form URL e.g. /recipes/new)
         - Form errors are displayed when invalid data is entered 
