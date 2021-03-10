@@ -38,13 +38,13 @@
       <%= button_to("My Repair Bills", repair_bills_path, method: :get) %>
     <% end %>
     
-    <% if current_user %>
+    
       <%= button_to("View All Technicians", '/technicians', method: :get) %><br>
-    <% end %>
+    
 
     <% if current_user %>
       <%= button_to "Create New Repair Bill", new_repair_bill_path, method: 'get' %>
-    <% end %>
+    <% end %> 
 
     <% if current_user %>
       <%= button_to("Top Performing Technician", '/technicians/top_tech', method: 'get') %>
