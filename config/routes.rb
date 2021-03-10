@@ -9,9 +9,9 @@ Rails.application.routes.draw do
   end
 
   resources :reviews
-  
   resources :repair_bills
   resources :users 
+  
   post '/repair_bills/:id/edit', to: 'repair_bills#edit'
   
   get '/auth/google_oauth2/callback', to: 'sessions#omniauth'
