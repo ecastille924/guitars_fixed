@@ -50,6 +50,10 @@
       <%= button_to("Top Performing Technician", '/technicians/top_tech', method: 'get') %>
     <% end %>
 
+    <% if logged_in? %>
+    <small><i>Logged is as: <%= current_user.username %></i></small>
+    <% end %>
+
     <% if flash[:message] %>
       <div class="field_with_errors"><%= flash[:message] %>
     <% end %>
