@@ -1,24 +1,4 @@
 <h1>Edit Bill of Repair</h1>
-<%= form_for(@repair_bill) do |f| %>
-    <%= f.label :brand %>
-    <%= f.text_field :brand %><br>
-    <%= f.label :model %>
-    <%= f.text_field :model %><br>
-    <%= f.label :year %>
-    <%= f.number_field :year %><br>
-    <%= f.label :style %>
-    <%= f.text_field :style %><br>
-    <%= f.label :acoustic %>
-    <%= f.check_box :acoustic %><br>
-    <%= f.label :electric %>
-    <%= f.check_box :electric %><br>
-    <br>
-    <%= f.label :reason_for_repair, "Reason for repair:" %><br>
-    <%= f.text_area :reason_for_repair %><br>
-    <br>
-    <%= f.label :repair_completed, "Repair Complete?" %>
-    <%= f.check_box :repair_completed %>
-    <br>
-    <br>
-    <%= f.submit name="Submit Repair Bill" %>
-<% end %>
+<%= render partial: "form" %>
+ 
+ 
