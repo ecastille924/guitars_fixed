@@ -1,0 +1,7 @@
+<h1>Repair Bills by Guitar Year</h1>
+
+<ul>
+
+<% @repair_bills.each do |rb| %>
+   <li> <%= rb.year %> <b><%= rb.brand %></b> <i><%= rb.model %></i></li>
+<% end %></ul>

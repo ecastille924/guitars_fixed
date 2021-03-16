@@ -54,6 +54,11 @@ class RepairBillsController < ApplicationController
             render :new
         end
     end
+
+    def ordered_by_year
+        @repair_bills = RepairBill.all.ordered_by_year
+    end
+
 end
 
 

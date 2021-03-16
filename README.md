@@ -1,4 +1,4 @@
-# README
+# Guitars Fixed README
 
 This application was created to give the user the ablility to create and submit a bill of repair for for a broken guitar. A user may also view a list of guitar repair technicians with specific areas of expertise that may be chosen when submitting a repair bill. 
 

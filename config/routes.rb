@@ -4,12 +4,16 @@ Rails.application.routes.draw do
   root 'sessions#welcome'
   get '/technicians/top_tech', to: 'technicians#top_tech'
   
+  get '/repair_bills/ordered_by_year', to: 'repair_bills#ordered_by_year'
+
   resources :technicians, only: [:create, :index, :new, :show] do
     resources :reviews
   end
 
   resources :reviews
   resources :repair_bills
+  
+
   resources :users 
   
   post '/repair_bills/:id/edit', to: 'repair_bills#edit'
